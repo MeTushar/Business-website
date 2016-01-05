@@ -29,8 +29,8 @@
 
   <body>
 
-    
-    <nav class="navbar navbar-transparent navbar-fixed-top cbp-af-header">
+    <header id="top">
+    <nav  class="navbar navbar-transparent navbar-fixed-top cbp-af-header">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -39,13 +39,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><span>Business</span> Template</a>
+          <a class="navbar-brand" href="#top"><span>Business</span> Template</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="#top">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Team</a></li>
+            <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
            
           </ul>
@@ -53,6 +53,7 @@
         </div>
       </div>
     </nav>
+    </header>
     <section >
       <div class="foo text-center">
         <h1><span>Business</span> Template</h1>
@@ -152,8 +153,9 @@
     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.backstretch.js"></script>
-  
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js "></script>
     <script>
+      $(this).scrollTop(0);
        $(".foo").backstretch([
           "img/office11.jpg",
           "img/office22.jpg",
@@ -171,6 +173,16 @@
         } else {
             $(".navbar-fixed-top").removeClass("cbp-af-header-shrink");
         }
+      });
+       $("body").scrollspy({
+        target: ".navbar",
+        offset: 160
+      });
+      $("nav a, a.brand").bind("click", function(){
+        $("html, body").stop().animate({
+            scrollTop: $($(this).attr("href")).offset().top-55
+        },1500,'easeInOutExpo');
+        event.preventDefault();
       });
     </script>
   </body>
