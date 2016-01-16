@@ -25,9 +25,7 @@ h1{
 	text-transform: uppercase;
 	font-weight: 700;
 }
-.navbar-transparent{
-	margin-top: 5px;
-}
+
 .navbar a{
 	color: #fff !important;
 }
@@ -39,9 +37,9 @@ h1{
 	background: none;
 	color: #00a8ff !important;
 }
-.navbar-transparent .navbar-nav > .active > a, .navbar-transparent .navbar-nav > .active > a:hover, .navbar-transparent .navbar-nav > .active > a:focus{
+.navbar-transparent .navbar-nav > .active > a,.navbar-transparent .navbar-nav > .active > a:hover, .navbar-transparent .navbar-nav > .active > a:hover, .navbar-transparent .navbar-nav > .active > a:focus{
 	background: #00a8ff;
-	color: #fff;
+	color: #fff !important;
 }
 .middle{
 	height: auto;
